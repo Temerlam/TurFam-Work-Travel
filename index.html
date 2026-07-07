@@ -1,0 +1,2186 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TurFam Visa — Work and Travel USA. Юридическая поддержка и сопровождение для получения визы J-1." />
+    <title>Work&Travel - это TurFam</title>
+    <link rel="icon" type="image/png" href="images/Icon.png" />
+    <link rel="apple-touch-icon" href="images/Icon.png" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; frame-src https://www.google.com;"
+    />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"] },
+            colors: {
+              deepblue: {
+                50: "#EFF4FF",
+                100: "#D9E5FF",
+                200: "#B3CBFF",
+                300: "#84AAFF",
+                400: "#4B82FF",
+                500: "#1E5CFF",
+                600: "#1749D6",
+                700: "#123AA8",
+                800: "#0E2D7D",
+                900: "#0A215C",
+                950: "#06163D"
+              }
+            },
+            boxShadow: {
+              soft: "0 12px 40px rgba(2, 6, 23, 0.12)"
+            }
+          }
+        }
+      };
+    </script>
+
+    <style>
+      :root {
+        --accent-from: #ff2d55; /* red-pink */
+        --accent-to: #ff3b30; /* vivid red */
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Line clamp (Tailwind plugin alternative) */
+      .line-clamp-4 {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .line-clamp-none {
+        display: block;
+        overflow: visible;
+      }
+      /* Global interactivity QA */
+      a,
+      button {
+        cursor: pointer;
+      }
+      @media (hover: hover) {
+        a,
+        button {
+          transition: all 300ms ease-in-out;
+        }
+        a:hover,
+        button:hover {
+          opacity: 0.92;
+        }
+      }
+      /* Nice selection */
+      ::selection {
+        background: rgba(255, 45, 85, 0.22);
+      }
+      /* Ensure the fixed header doesn't cover anchor targets */
+      [id] {
+        scroll-margin-top: 92px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 font-sans text-slate-900 antialiased pb-32 md:pb-0">
+    <!-- Header / Navbar -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 z-50 w-full bg-[#0F172A] py-4 md:left-1/2 md:mt-4 md:w-[95%] md:max-w-7xl md:-translate-x-1/2 md:overflow-hidden md:rounded-full md:bg-[#1e293b] md:shadow-xl md:ring-1 md:ring-white/10 md:py-0"
+      aria-label="Главная навигация"
+    >
+        <div class="flex w-full flex-row items-center justify-between px-4 md:h-[76px] md:px-6 lg:px-8 md:gap-4" id="navbarInner">
+          <!-- Left: Logo (horizontal icon + text) -->
+          <a href="#top" class="flex items-center gap-2" aria-label="TurFam">
+            <img src="images/logo.png" alt="TurFam" class="h-8 w-auto object-contain brightness-125 contrast-110 md:h-10" />
+          </a>
+
+          <!-- Right: Nav + Phone + Language -->
+          <div class="hidden items-center gap-8 md:flex">
+            <nav class="flex items-center gap-6 text-sm font-medium">
+              <a class="nav-link text-white/90 transition hover:text-white" href="#what-we-do" data-i18n="nav.worktravel"
+                >WORK &amp; TRAVEL USA</a
+              >
+              <a class="nav-link text-white/90 transition hover:text-white" href="#jobs" data-i18n="nav.jobs">РАБОТА</a>
+              <a class="nav-link text-white/90 transition hover:text-white" href="#requirements" data-i18n="nav.requirements"
+                >ТРЕБОВАНИЯ</a
+              >
+              <a class="nav-link text-white/90 transition hover:text-white" href="#contacts" data-i18n="nav.contacts"
+                >КОНТАКТЫ</a
+              >
+            </nav>
+            <a
+              href="tel:+77066562079"
+              class="inline-block cursor-pointer whitespace-nowrap rounded-lg px-2 py-1 text-sm font-semibold text-white transition-opacity hover:opacity-75"
+              aria-label="Позвонить: +7 (706) 656-20-79"
+              title="Позвонить"
+            >
+              +7 (706) 656-20-79
+            </a>
+            <div class="flex items-center gap-2 text-sm">
+              <button
+                id="langRU"
+                type="button"
+                class="lang-btn font-semibold text-rose-400"
+                aria-pressed="true"
+              >
+                RU
+              </button>
+              <span class="lang-sep text-white/50">|</span>
+              <button
+                id="langEN"
+                type="button"
+                class="lang-btn font-normal text-white/80 hover:text-white"
+                aria-pressed="false"
+              >
+                EN
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile: Menu -->
+          <div class="flex flex-row items-center gap-3 md:hidden">
+            <a
+              href="tel:+77066562079"
+              class="flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white/90"
+              aria-label="Позвонить"
+              title="Позвонить"
+            >
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path
+                  d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.45 2.1L8 9.3a16 16 0 0 0 6.7 6.7l1.2-1.25a2 2 0 0 1 2.1-.45c.7.3 1.5.5 2.3.6a2 2 0 0 1 1.7 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <button
+              id="mobileMenuBtn"
+              class="flex items-center justify-center w-10 h-10 text-white"
+              type="button"
+              aria-label="Открыть меню"
+              aria-expanded="false"
+            >
+              <svg class="w-7 h-7 stroke-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+          <!-- Mobile dropdown -->
+    </header>
+
+    <div id="mobileMenuBackdrop" class="fixed inset-0 z-40 hidden bg-black/60 opacity-0 transition-opacity duration-300 md:hidden" aria-hidden="true"></div>
+
+    <div
+      id="mobileMenu"
+      class="fixed top-0 right-0 z-50 h-full w-[85%] translate-x-full bg-[#0A192F] transform transition-transform duration-300 md:hidden sm:w-[350px]"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Мобильное меню"
+    >
+      <div class="flex h-full flex-col px-6 py-8">
+        <div class="flex items-center justify-between">
+          <a href="#top" class="flex items-center gap-2" aria-label="TurFam">
+            <img src="images/logo.png" alt="TurFam" class="h-10 w-auto object-contain brightness-125 contrast-110" />
+          </a>
+          <button
+            id="mobileMenuClose"
+            type="button"
+            class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
+            aria-label="Закрыть меню"
+          >
+            <span class="text-2xl leading-none">✕</span>
+          </button>
+        </div>
+
+        <nav class="mt-10 flex flex-1 flex-col gap-2 text-lg text-white/90">
+          <a class="inline-flex min-h-[44px] items-center rounded-xl px-4 hover:bg-white/10 hover:text-white transition-colors" href="#what-we-do" data-i18n="nav.worktravel">WORK &amp; TRAVEL USA</a>
+          <a class="inline-flex min-h-[44px] items-center rounded-xl px-4 hover:bg-white/10 hover:text-white transition-colors" href="#jobs" data-i18n="nav.jobs">РАБОТА</a>
+          <a class="inline-flex min-h-[44px] items-center rounded-xl px-4 hover:bg-white/10 hover:text-white transition-colors" href="#requirements" data-i18n="nav.requirements">ТРЕБОВАНИЯ</a>
+          <a class="inline-flex min-h-[44px] items-center rounded-xl px-4 hover:bg-white/10 hover:text-white transition-colors" href="#contacts" data-i18n="nav.contacts">КОНТАКТЫ</a>
+        </nav>
+
+        <div class="pt-8">
+          <div class="flex items-center justify-between gap-3">
+            <button id="langRU_M" type="button" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-white/10 px-4 text-base font-semibold text-white" aria-pressed="true">RU</button>
+            <button id="langEN_M" type="button" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl px-4 text-base text-white/80 hover:bg-white/10 hover:text-white transition-colors" aria-pressed="false">EN</button>
+          </div>
+
+          <a
+            href="tel:+77066562079"
+            class="mt-6 inline-flex min-h-[44px] w-full items-center justify-center rounded-2xl bg-white/5 px-5 py-4 text-center text-xl font-bold text-white hover:bg-white/10 hover:text-blue-400 transition-colors"
+            aria-label="Позвонить: +7 (706) 656-20-79"
+          >
+            +7 (706) 656-20-79
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <main id="top">
+      <section
+        class="hidden md:block relative isolate min-h-[calc(100vh-100px)] overflow-hidden bg-cover bg-center bg-scroll md:h-[calc(100vh-100px)] md:bg-fixed"
+        style="background-image: url('images/banner.jpg');"
+        aria-label="Hero"
+      >
+        <!-- Localized text protection (left-to-right gradient overlay) -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
+
+        <!-- Content -->
+        <div class="relative mx-auto flex max-w-7xl flex-col justify-center px-4 pb-10 pt-24 sm:px-6 md:h-full md:items-center md:pb-28 md:pt-28 lg:px-8">
+          <div class="max-w-3xl order-1">
+            <p
+              class="mb-2 text-xl font-semibold italic tracking-wide text-[#FFB800] drop-shadow-lg sm:text-2xl opacity-0 animate-[fadeInUp_900ms_ease-out_forwards] [animation-delay:150ms]"
+              data-i18n="hero.kicker"
+            >
+              Start your journey with TurFam!
+            </p>
+            <h1
+              class="text-balance text-4xl font-extrabold uppercase leading-tight tracking-wide text-white drop-shadow-lg md:text-5xl lg:text-6xl xl:text-7xl opacity-0 animate-[fadeInUp_900ms_ease-out_forwards] [animation-delay:250ms]"
+              data-i18n="hero.title"
+            >
+              WORK AND TRAVEL USA
+            </h1>
+            <p
+              class="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-white/90 drop-shadow-lg md:text-lg opacity-0 animate-[fadeInUp_900ms_ease-out_forwards] [animation-delay:350ms]"
+              data-i18n="hero.subtitle"
+            >
+              Легально работайте, путешествуйте и прокачайте английский за одно лето — с сопровождением TurFam от регистрации
+              до вылета.
+            </p>
+
+            <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a
+                href="#jobs"
+                class="inline-flex w-full items-center justify-center rounded-xl px-7 py-3 text-center text-sm font-bold tracking-wide text-white shadow-soft transition hover:brightness-110 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/40 drop-shadow-xl opacity-0 animate-[fadeInUp_900ms_ease-out_forwards] [animation-delay:450ms] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+                style="background-image: linear-gradient(90deg, var(--accent-from), var(--accent-to));"
+                data-i18n="hero.ctaPrimary"
+              >
+                EMPLOYERS
+              </a>
+              <a
+                href="#what-we-do"
+                class="inline-flex w-full items-center justify-center rounded-xl border border-white/25 bg-white/5 px-7 py-3 text-center text-sm font-semibold text-white/95 backdrop-blur-sm transition hover:bg-white/10 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/40 drop-shadow-xl opacity-0 animate-[fadeInUp_900ms_ease-out_forwards] [animation-delay:550ms] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+                data-i18n="hero.ctaSecondary"
+              >
+                Узнать о программе
+              </a>
+            </div>
+
+            <!-- Bottom cards moved to a 5-card layout (see absolute container below) -->
+          </div>
+        </div>
+
+        <!-- 5-card glassmorphism layout (sits above the yellow banner) -->
+        <div class="relative inset-x-0 z-10 mt-8 md:absolute md:bottom-4 md:mt-0">
+          <div class="px-4 sm:px-6 lg:px-8">
+            <div class="grid w-full max-w-7xl mx-auto grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <!-- Card 1 -->
+              <article class="bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-col justify-between text-white transition-all duration-300 hover:bg-black/50 hover:-translate-y-1">
+                <div>
+                  <div class="mb-3 flex items-center gap-3">
+                    <svg class="h-8 w-8 flex-none text-[#FFB800]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="2" />
+                      <path d="M3.6 9h16.8M3.6 15h16.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                      <path d="M12 3c2.8 2.9 4.4 6.3 4.4 9s-1.6 6.1-4.4 9c-2.8-2.9-4.4-6.3-4.4-9S9.2 5.9 12 3Z" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <p class="text-sm font-extrabold uppercase tracking-wide leading-tight" data-i18n="hero.glass1.title">
+                      ПОДДЕРЖКА ПО ВИЗЕ J-1
+                    </p>
+                  </div>
+                  <p class="text-sm leading-snug text-white/85" data-i18n="hero.glass1.desc">
+                    Полное сопровождение на всех этапах оформления документов.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-col justify-between text-white transition-all duration-300 hover:bg-black/50 hover:-translate-y-1">
+                <div>
+                  <div class="mb-3 flex items-center gap-3">
+                    <svg class="h-8 w-8 flex-none text-[#FFB800]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                      <path d="M6 7h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" />
+                      <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <p class="text-sm font-extrabold uppercase tracking-wide leading-tight" data-i18n="hero.glass2.title">
+                      РАБОТА И ПУТЕШЕСТВИЯ
+                    </p>
+                  </div>
+                  <p class="text-sm leading-snug text-white/85" data-i18n="hero.glass2.desc">
+                    Работай, зарабатывай и путешествуй по всей Америке.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Card 3 -->
+              <article class="bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-col justify-between text-white transition-all duration-300 hover:bg-black/50 hover:-translate-y-1">
+                <div>
+                  <div class="mb-3 flex items-center gap-3">
+                    <svg class="h-8 w-8 flex-none text-[#FFB800]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M4 21V8l8-4 8 4v13" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                      <path d="M9 21v-7h6v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                      <path d="M7.5 11h.01M12 11h.01M16.5 11h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                    <p class="text-sm font-extrabold uppercase tracking-wide leading-tight" data-i18n="hero.glass3.title">
+                      ПРОВЕРЕННЫЕ ВАКАНСИИ
+                    </p>
+                  </div>
+                  <p class="text-sm leading-snug text-white/85" data-i18n="hero.glass3.desc">
+                    Надежные работодатели и полная подготовка к интервью.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Card 4 -->
+              <article class="bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-col justify-between text-white transition-all duration-300 hover:bg-black/50 hover:-translate-y-1">
+                <div>
+                  <div class="mb-3 flex items-center gap-3">
+                    <svg class="h-8 w-8 flex-none text-[#FFB800]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M4 12a8 8 0 0 1 16 0v5a3 3 0 0 1-3 3h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                      <path d="M4 13v4a2 2 0 0 0 2 2h2v-8H6a2 2 0 0 0-2 2Z" stroke="currentColor" stroke-width="2" />
+                      <path d="M20 13v4a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2Z" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <p class="text-sm font-extrabold uppercase tracking-wide leading-tight" data-i18n="hero.glass4.title">
+                      ПОДДЕРЖКА 24/7
+                    </p>
+                  </div>
+                  <p class="text-sm leading-snug text-white/85" data-i18n="hero.glass4.desc">
+                    Команда всегда на связи. Четкий маршрут от заявки до вылета.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="flex flex-col md:hidden relative pt-24 pb-8 px-0 bg-cover bg-center min-h-[100dvh]"
+        style="background-image: url('images/banner.jpg');"
+        aria-label="Hero"
+      >
+        <div class="-mt-2 bg-black/5 backdrop-blur-[1px] border border-white/20 rounded-[32px] px-5 py-6 w-[calc(100%-1.5rem)] mx-auto flex flex-col items-center mb-2">
+          <p class="text-white font-bold drop-shadow-[0_3px_5px_rgba(0,0,0,1)] mb-2 text-center w-full text-[11.5px] sm:text-[12px]">Твое незабываемое лето в Америке начинается здесь</p>
+          <h1 class="text-[34px] leading-[1.05] font-extrabold text-white text-center drop-shadow-[0_4px_8px_rgba(0,0,0,1)] mb-8 w-full uppercase">WORK &amp; TRAVEL USA</h1>
+
+          <div class="flex flex-col gap-6 text-white w-full mb-8">
+            <div class="flex items-start">
+              <svg class="w-5 h-5 flex-none text-[#D4AF37] mt-1 mr-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M4 9h16v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                <path d="M9 13h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+              <span class="text-[17px] font-semibold leading-relaxed drop-shadow-[0_3px_5px_rgba(0,0,0,1)]">Проверенные вакансии от партнеров в США</span>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-5 h-5 flex-none text-[#D4AF37] mt-1 mr-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M10 14 21 8l-9 10-2-4-6-2 7-4 2 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M10 14 6 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="text-[17px] font-semibold leading-relaxed drop-shadow-[0_3px_5px_rgba(0,0,0,1)]">Организованное культурное погружение</span>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-5 h-5 flex-none text-[#D4AF37] mt-1 mr-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 3a4 4 0 0 0-4 4v1a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M7 21v-2a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="text-[17px] font-semibold leading-relaxed drop-shadow-[0_3px_5px_rgba(0,0,0,1)]">Интенсивная практика английского</span>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-5 h-5 flex-none text-[#D4AF37] mt-1 mr-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 22s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M12 11.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <span class="text-[17px] font-semibold leading-relaxed drop-shadow-[0_3px_5px_rgba(0,0,0,1)]">Полная поддержка визы J-1</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-3 w-full">
+            <a href="#jobs" class="w-full bg-[#FF3B30] text-white rounded-[20px] py-4 font-bold text-[20px] text-center">EMPLOYERS</a>
+            <a href="#what-we-do" class="w-full bg-black/40 border border-white/20 backdrop-blur-md rounded-[20px] py-4 font-bold text-[20px] text-white text-center">Узнать о программе</a>
+          </div>
+        </div>
+
+        <div class="w-[calc(100%-1.5rem)] mx-auto bg-[#F8F8F5] rounded-[24px] px-2 py-3 mb-4 mt-2 relative z-20 flex flex-row justify-between items-center">
+          <div class="flex flex-row items-center gap-1.5 w-1/4 justify-center">
+            <svg class="w-4 h-4 flex-shrink-0 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="12" cy="6" rx="6" ry="2.5" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 6v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 10v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 14v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <div class="flex flex-col">
+              <div class="text-[12px] sm:text-[13px] font-extrabold text-black leading-none">$15+</div>
+              <div class="text-[8px] sm:text-[9px] font-medium text-gray-700 leading-[1.1]">Минимальная ставка в час</div>
+            </div>
+          </div>
+
+          <div class="flex flex-row items-center gap-1.5 w-1/4 justify-center">
+            <svg class="w-4 h-4 flex-shrink-0 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M5 7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 7l-3 6h6l-3-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M17 7l-3 6h6l-3-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+            <div class="flex flex-col">
+              <div class="text-[12px] sm:text-[13px] font-extrabold text-black leading-none">100%</div>
+              <div class="text-[8px] sm:text-[9px] font-medium text-gray-700 leading-[1.1]">Юридическая поддержка</div>
+            </div>
+          </div>
+
+          <div class="flex flex-row items-center gap-1.5 w-1/4 justify-center">
+            <svg class="w-4 h-4 flex-shrink-0 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <div class="flex flex-col">
+              <div class="text-[12px] sm:text-[13px] font-extrabold text-black leading-none">24/7</div>
+              <div class="text-[8px] sm:text-[9px] font-medium text-gray-700 leading-[1.1]">На связи в США</div>
+            </div>
+          </div>
+
+          <div class="flex flex-row items-center gap-1.5 w-1/4 justify-center">
+            <svg class="w-4 h-4 flex-shrink-0 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M8.2 13.6 6 11.4l-3 3 2.2 2.2a4 4 0 0 0 5.6 0l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15.8 10.4 18 12.6l3-3-2.2-2.2a4 4 0 0 0-5.6 0L9.6 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 4l.7 1.4 1.6.2-1.2 1.1.3 1.6L12 7.6l-1.4.7.3-1.6-1.2-1.1 1.6-.2L12 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+            <div class="flex flex-col">
+              <div class="text-[12px] sm:text-[13px] font-extrabold text-black leading-none">100%</div>
+              <div class="text-[8px] sm:text-[9px] font-medium text-gray-700 leading-[1.1]">Профессионализм и Поддержка</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust bar / Stats (after Hero) -->
+      <section id="trustbar" class="hidden md:block h-[100px] w-full bg-[#FBBF24]">
+        <div class="mx-auto flex h-full w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 gap-4 text-left md:grid-cols-4 md:gap-6">
+            <div>
+              <div class="text-3xl font-extrabold leading-tight text-gray-900 md:text-5xl">$15+</div>
+              <div class="mt-1 text-xs font-bold text-gray-900 md:text-base" data-i18n="stats.sub1">Минимальная ставка в час</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold leading-tight text-gray-900 md:text-5xl">100%</div>
+              <div class="mt-1 text-xs font-bold text-gray-900 md:text-base" data-i18n="stats.sub2">Юридическая поддержка</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold leading-tight text-gray-900 md:text-5xl">24/7</div>
+              <div class="mt-1 text-xs font-bold text-gray-900 md:text-base" data-i18n="stats.sub3">На связи в США</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold leading-tight text-gray-900 md:text-5xl">100%</div>
+              <div class="mt-1 text-xs font-bold text-gray-900 md:text-base" data-i18n="stats.sub4">Профессионализм</div>
+            </div>
+          </div>
+
+          <!-- Support + Socials (right) -->
+          <div class="hidden items-center md:flex">
+            <div class="flex flex-col items-center justify-center gap-2">
+              <p class="text-xl font-bold text-gray-900" data-i18n="stats.support">Support</p>
+              <div class="flex items-center gap-4">
+                <a
+                  href="#"
+                  class="inline-flex h-9 w-9 items-center justify-center rounded-xl text-gray-900 transition-all duration-300 hover:bg-black/10 hover:-translate-y-0.5"
+                  aria-label="Instagram"
+                >
+                  <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M7.5 2.5h9A5 5 0 0 1 21.5 7.5v9a5 5 0 0 1-5 5h-9a5 5 0 0 1-5-5v-9a5 5 0 0 1 5-5Z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    />
+                    <path d="M17.35 6.8h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex h-9 w-9 items-center justify-center rounded-xl text-gray-900 transition-all duration-300 hover:bg-black/10 hover:-translate-y-0.5"
+                  aria-label="Facebook"
+                >
+                  <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M13.5 21.5v-8h2.5l.5-3H13.5V8.6c0-.86.24-1.44 1.5-1.44H16.7V4.5c-.3-.04-1.33-.12-2.54-.12-2.5 0-4.16 1.52-4.16 4.3v1.82H7.5v3H10v8h3.5Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+
+      <!-- Why TurFam? -->
+      <section id="what-we-do" class="relative overflow-hidden bg-slate-50 py-16 md:py-24">
+        <!-- Decorative watermark -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
+          <svg
+            class="absolute -left-24 top-10 w-[520px] text-slate-400 opacity-10 rotate-[-8deg]"
+            viewBox="0 0 600 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Compass rings -->
+            <circle cx="300" cy="300" r="220" stroke="currentColor" stroke-width="10" />
+            <circle cx="300" cy="300" r="160" stroke="currentColor" stroke-width="6" stroke-dasharray="10 14" />
+            <!-- Compass needle -->
+            <path d="M300 130l42 152-42 36-42-36 42-152Z" stroke="currentColor" stroke-width="10" stroke-linejoin="round" />
+            <path d="M300 470l-42-152 42-36 42 36-42 152Z" stroke="currentColor" stroke-width="10" stroke-linejoin="round" />
+            <!-- Airplane line -->
+            <path
+              d="M120 360c90 60 210 70 330 10"
+              stroke="currentColor"
+              stroke-width="10"
+              stroke-linecap="round"
+              stroke-dasharray="18 18"
+            />
+            <path
+              d="M470 362l-28-10 6 28 22-18Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid items-center gap-10 lg:grid-cols-2">
+            <div class="relative">
+              <div class="relative rounded-[28px] bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-slate-200/70">
+                <img
+                  src="images/WorkandTravel.jpg"
+                  alt="Work and Travel USA"
+                  loading="lazy"
+                  decoding="async"
+                  class="mx-auto w-full max-w-[420px] rounded-lg object-cover"
+                />
+              </div>
+            </div>
+
+            <div>
+              <p class="text-base font-bold italic tracking-wide text-rose-600 md:text-sm" data-i18n="why.kicker">Что Мы Делаем?</p>
+              <h2 class="mt-2 text-balance text-3xl font-extrabold uppercase tracking-wide text-slate-900 sm:text-4xl">
+                <span data-i18n="why.title">ПРОГРАММА «WORK AND TRAVEL USA»</span>
+              </h2>
+              <p class="mt-5 text-pretty text-base leading-relaxed text-slate-700 sm:text-lg" data-i18n="why.desc">
+                Мы предоставляем необходимую юридическую поддержку для получения визы J1, которая позволяет участвовать
+                в программе оплачиваемого трудового обмена в США студентам университетов и вузов в возрасте от 18 до 28
+                лет со средним или продвинутым уровнем владения английским языком.
+              </p>
+
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href="#requirements"
+                  class="inline-flex min-h-[44px] items-center justify-center rounded-xl px-7 py-3 text-sm font-bold tracking-wide text-white shadow-soft transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-rose-400/40 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
+                  style="background-image: linear-gradient(90deg, var(--accent-from), var(--accent-to));"
+                  data-i18n="why.cta"
+                >
+                  ТРЕБОВАНИЯ
+                </a>
+                <p class="text-base text-slate-600 md:text-sm">
+                  <span data-i18n="why.note">Быстро проверим соответствие и подскажем следующий шаг.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 pb-16 md:hidden" aria-label="Features">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6">
+          <div class="grid grid-cols-1 gap-4">
+            <article class="bg-[#0A192F] rounded-2xl p-4 text-white ring-1 ring-white/10">
+              <div class="flex items-start gap-3">
+                <svg class="h-8 w-8 flex-none text-[#FFB800]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="2" />
+                  <path d="M3.6 9h16.8M3.6 15h16.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M12 3c2.8 2.9 4.4 6.3 4.4 9s-1.6 6.1-4.4 9c-2.8-2.9-4.4-6.3-4.4-9S9.2 5.9 12 3Z" stroke="currentColor" stroke-width="2" />
+                </svg>
+                <div>
+                  <p class="text-base font-extrabold uppercase tracking-wide leading-tight" data-i18n="hero.glass1.title">ПОДДЕРЖКА ПО ВИЗЕ J-1</p>
+                  <p class="mt-2 text-base leading-relaxed text-white/85" data-i18n="hero.glass1.desc">Полное сопровождение на всех этапах оформления документов.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-[#0A192F] rounded-2xl p-4 text-white ring-1 ring-white/10">
+              <div class="flex items-start gap-3">
+                <svg class="h-8 w-8 flex-none text-[#FFB800]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M6 7h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" />
+                  <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div>
+                  <p class="text-base font-extrabold uppercase tracking-wide leading-tight" data-i18n="hero.glass2.title">РАБОТА И ПУТЕШЕСТВИЯ</p>
+                  <p class="mt-2 text-base leading-relaxed text-white/85" data-i18n="hero.glass2.desc">Работай, зарабатывай и путешествуй по всей Америке.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-[#0A192F] rounded-2xl p-4 text-white ring-1 ring-white/10">
+              <div class="flex items-start gap-3">
+                <svg class="h-8 w-8 flex-none text-[#FFB800]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 21V8l8-4 8 4v13" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                  <path d="M9 21v-7h6v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                  <path d="M7.5 11h.01M12 11h.01M16.5 11h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                </svg>
+                <div>
+                  <p class="text-base font-extrabold uppercase tracking-wide leading-tight" data-i18n="hero.glass3.title">ПРОВЕРЕННЫЕ ВАКАНСИИ</p>
+                  <p class="mt-2 text-base leading-relaxed text-white/85" data-i18n="hero.glass3.desc">Надежные работодатели и полная подготовка к интервью.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-[#0A192F] rounded-2xl p-4 text-white ring-1 ring-white/10">
+              <div class="flex items-start gap-3">
+                <svg class="h-8 w-8 flex-none text-[#FFB800]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 12a8 8 0 0 1 16 0v5a3 3 0 0 1-3 3h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M4 13v4a2 2 0 0 0 2 2h2v-8H6a2 2 0 0 0-2 2Z" stroke="currentColor" stroke-width="2" />
+                  <path d="M20 13v4a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2Z" stroke="currentColor" stroke-width="2" />
+                </svg>
+                <div>
+                  <p class="text-base font-extrabold uppercase tracking-wide leading-tight" data-i18n="hero.glass4.title">ПОДДЕРЖКА 24/7</p>
+                  <p class="mt-2 text-base leading-relaxed text-white/85" data-i18n="hero.glass4.desc">Команда всегда на связи. Четкий маршрут от заявки до вылета.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Jobs / Categories -->
+      <section id="jobs" class="bg-slate-50 py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="text-base font-bold italic tracking-wide text-rose-600 md:text-sm" data-i18n="jobs.kicker">ВАКАНСИИ</p>
+              <h2 class="mt-2 text-3xl font-extrabold uppercase tracking-wide text-slate-900 sm:text-4xl">
+                <span data-i18n="jobs.title">Категории работ</span>
+              </h2>
+              <p class="mt-3 max-w-2xl text-slate-700" data-i18n="jobs.desc">
+                Выберите направление и мы подберем работодателя под ваш английский и цели.
+              </p>
+            </div>
+            <a
+              href="#contacts"
+              class="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-rose-400/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
+              data-i18n="jobs.cta"
+            >
+              Получить консультацию
+            </a>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1 -->
+            <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition-shadow duration-300 hover:shadow-md">
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src="images/amusement-park-summer-job.jpg.jpg"
+                  alt="Парки аттракционов"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/35 to-transparent"></div>
+              </div>
+              <div class="p-6">
+                <div>
+                  <p class="text-lg font-bold text-gray-900" data-i18n="jobs.card1.title">ПАРКИ АТТРАКЦИОНОВ</p>
+                  <p class="mt-1 text-base font-semibold text-gray-700" data-i18n="jobs.card1.salary">ЗАРПЛАТА: ОТ $15.50 / ЧАС</p>
+
+                  <div class="mt-4 flex flex-col gap-2">
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card1.b1">Работа оператором аттракционов.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card1.b2">Стабильный график.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 8h16v10H4V8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M7 8V6h10v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 12c1.2 0 2 .5 2 1.3 0 .7-.5 1.1-1.3 1.3l-1.2.3c-.8.2-1.3.6-1.3 1.3 0 .8.8 1.3 2 1.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card1.b3">Возможность overtime.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition-shadow duration-300 hover:shadow-md">
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src="images/lifeguard-pool-summer-job.jpg"
+                  alt="Спасатели Lifeguard"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/35 to-transparent"></div>
+              </div>
+              <div class="p-6">
+                <div>
+                  <p class="text-lg font-bold text-gray-900" data-i18n="jobs.card2.title">СПАСАТЕЛИ (LIFEGUARD)</p>
+                  <p class="mt-1 text-base font-semibold text-gray-700" data-i18n="jobs.card2.salary">ЗАРПЛАТА: ОТ $16.00 / ЧАС</p>
+
+                  <div class="mt-4 flex flex-col gap-2">
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 2 20 6v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card2.b1">Ответственная работа.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H4v12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M8 3h8v4H8V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M8 11h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card2.b2">Бесплатное обучение.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 2l3 7h7l-5.7 4.1L18 20l-6-4-6 4 1.7-6.9L2 9h7l3-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card2.b3">Сертификация США.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition-shadow duration-300 hover:shadow-md">
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src="images/waiter-server-restaurant-job.jpg.jpg"
+                  alt="Гостеприимство и сервис"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/35 to-transparent"></div>
+              </div>
+              <div class="p-6">
+                <div>
+                  <p class="text-lg font-bold text-gray-900" data-i18n="jobs.card3.title">ГОСТЕПРИИМСТВО И СЕРВИС</p>
+                  <p class="mt-1 text-base font-semibold text-gray-700" data-i18n="jobs.card3.salary">ЗАРПЛАТА: $10 - $14 / ЧАС + ЧАЕВЫЕ</p>
+
+                  <div class="mt-4 flex flex-col gap-2">
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 3h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M8 3v7a4 4 0 0 0 8 0V3" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M6 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M18 8h1a3 3 0 0 1 0 6h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card3.b1">Официанты и хостес.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 21V8l8-4 8 4v13" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M9 21v-7h6v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card3.b2">Сотрудники отелей.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-5 3 1.6-4.7A7.5 7.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M8.5 11.5h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M8.5 15h4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                      <span data-i18n="jobs.card3.b3">Практика английского.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Requirements -->
+      <section id="requirements" class="bg-slate-50 py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="relative overflow-hidden rounded-[28px] bg-slate-50 shadow-soft">
+            <div class="grid grid-cols-1 items-center gap-8 p-6 sm:p-8 lg:grid-cols-12">
+              <!-- Image -->
+              <div class="lg:col-span-5">
+                <img
+                  src="images/requirement.jpg"
+                  alt="Требования к участникам"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-auto w-full rounded-2xl object-contain"
+                />
+              </div>
+
+              <!-- Requirements card -->
+              <div class="lg:col-span-7">
+                <div class="rounded-2xl bg-deepblue-950 p-6 text-white shadow-soft ring-1 ring-white/10 sm:p-8 lg:p-10">
+                  <div class="flex items-start justify-between gap-6">
+                    <h2 class="text-2xl font-extrabold uppercase tracking-wide sm:text-3xl lg:text-4xl" data-i18n="req.title">ТРЕБОВАНИЯ</h2>
+
+                    <span
+                      class="flex items-center gap-2 rounded-full bg-[#FFB800] px-4 py-1.5 text-sm font-bold tracking-wide text-black shadow-sm"
+                      aria-label="J-1 VISA"
+                      title="J-1 VISA"
+                    >
+                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 4h10a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" />
+                        <path d="M9 8h6M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                      </svg>
+                      <span>J-1 VISA</span>
+                    </span>
+                  </div>
+
+                  <ul class="mt-7 space-y-4 text-base font-semibold text-white/90 sm:text-lg lg:text-xl">
+                    <li class="flex gap-4">
+                      <span class="mt-1 inline-flex h-6 w-6 flex-none items-center justify-center rounded-lg bg-white/10">✓</span>
+                      <span data-i18n="req.item1">В ВОЗРАСТЕ ОТ 18 ДО 28 ЛЕТ</span>
+                    </li>
+                    <li class="flex gap-4">
+                      <span class="mt-1 inline-flex h-6 w-6 flex-none items-center justify-center rounded-lg bg-white/10">✓</span>
+                      <span data-i18n="req.item2">БЫТЬ СТУДЕНТОМ УНИВЕРСИТЕТА</span>
+                    </li>
+                    <li class="flex gap-4">
+                      <span class="mt-1 inline-flex h-6 w-6 flex-none items-center justify-center rounded-lg bg-white/10">✓</span>
+                      <span data-i18n="req.item3">АНГЛИЙСКИЙ ЯЗЫК ОТ INTERMEDIATE И ВЫШЕ</span>
+                    </li>
+                  </ul>
+
+                  <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <a
+                      href="https://api.whatsapp.com/send/?phone=77066562079&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0+Work+and+Travel+USA.+%D0%A5%D0%BE%D1%87%D1%83+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E.&type=phone_number&app_absent=0"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    class="inline-flex min-h-[44px] md:min-h-[0px] items-center justify-center rounded-xl px-6 py-3 text-sm font-bold tracking-wide text-white shadow-soft transition hover:brightness-110 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-rose-400/40 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
+                      style="background-image: linear-gradient(90deg, var(--accent-from), var(--accent-to));"
+                      data-i18n="req.cta"
+                    >
+                      Записаться на консультацию
+                    </a>
+                  <p class="text-base text-white/70 md:text-sm" data-i18n="req.note">Ответим быстро и подскажем, подойдёт ли программа.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hidden w-full bg-[#FBBF24] py-10 md:hidden" aria-label="Stats">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6">
+          <div class="grid grid-cols-1 gap-6 text-left">
+            <div class="rounded-2xl bg-white/10 px-6 py-6">
+              <div class="text-4xl font-extrabold leading-tight text-gray-900">$15+</div>
+              <div class="mt-2 text-base font-bold text-gray-900" data-i18n="stats.sub1">Минимальная ставка в час</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 px-6 py-6">
+              <div class="text-4xl font-extrabold leading-tight text-gray-900">100%</div>
+              <div class="mt-2 text-base font-bold text-gray-900" data-i18n="stats.sub2">Юридическая поддержка</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 px-6 py-6">
+              <div class="text-4xl font-extrabold leading-tight text-gray-900">24/7</div>
+              <div class="mt-2 text-base font-bold text-gray-900" data-i18n="stats.sub3">На связи в США</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 px-6 py-6">
+              <div class="text-4xl font-extrabold leading-tight text-gray-900">100%</div>
+              <div class="mt-2 text-base font-bold text-gray-900" data-i18n="stats.sub4">Профессионализм</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="relative overflow-hidden bg-slate-50 py-16 md:py-24">
+        <!-- Subtle travel watermark -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
+          <svg
+            class="absolute -left-20 top-10 w-[420px] text-slate-400 opacity-10 rotate-[-10deg]"
+            viewBox="0 0 600 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="300" cy="300" r="210" stroke="currentColor" stroke-width="10" />
+            <circle cx="300" cy="300" r="150" stroke="currentColor" stroke-width="6" stroke-dasharray="10 14" />
+            <path d="M300 140l38 138-38 34-38-34 38-138Z" stroke="currentColor" stroke-width="10" stroke-linejoin="round" />
+            <path d="M300 460l-38-138 38-34 38 34-38 138Z" stroke="currentColor" stroke-width="10" stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <!-- Airplane outline decoration -->
+        <div class="pointer-events-none absolute inset-0 z-0">
+          <svg
+            class="absolute -right-24 top-6 h-[520px] w-[520px] rotate-[18deg] text-slate-300/30 sm:-right-10 sm:top-8 sm:h-[620px] sm:w-[620px]"
+            viewBox="0 0 512 512"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M477 253c-5 18-25 30-44 26l-108-23-84 83 19 77c5 18-5 37-22 43l-14 5c-16 6-34-2-41-17l-40-82-66 61c-10 9-25 11-37 5l-19-9c-17-8-24-28-15-45l35-69L31 282c-14-7-21-23-16-38l4-13c6-18 25-29 44-25l137 31L370 95c13-12 33-14 48-6l16 9c15 9 21 28 13 44l-50 98 54 13c18 4 30 22 26 40Z"
+              stroke="currentColor"
+              stroke-width="10"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="text-sm font-bold italic tracking-wide text-rose-600" data-i18n="test.kicker">ОТЗЫВЫ</p>
+              <h2 class="mt-2 text-3xl font-extrabold uppercase tracking-wide text-slate-900 sm:text-4xl">
+                <span data-i18n="test.title">Истории участников</span>
+              </h2>
+              <p class="mt-3 max-w-2xl text-slate-700" data-i18n="test.desc">
+                Реальные впечатления студентов — как прошла работа, путешествия и рост.
+              </p>
+            </div>
+
+            <div class="hidden items-center gap-2 sm:flex">
+              <button
+                id="tPrev"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#0A192F] text-white shadow-lg transition-all duration-300 hover:bg-[#0A192F]/90 focus:outline-none focus:ring-2 focus:ring-rose-400/30"
+                type="button"
+                aria-label="Предыдущий отзыв"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 6 8 12l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button
+                id="tNext"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#0A192F] text-white shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] focus:outline-none focus:ring-2 focus:ring-rose-400/30"
+                type="button"
+                aria-label="Следующий отзыв"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <div
+              id="tScroller"
+              class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none]"
+              style="scrollbar-width: none;"
+            >
+              <style>
+                #tScroller::-webkit-scrollbar { display: none; }
+              </style>
+
+              <!-- Card 1 -->
+              <article class="relative w-[85%] flex-none snap-center overflow-hidden rounded-2xl bg-white p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-2 sm:w-[460px] sm:p-10">
+                <span class="absolute bottom-4 right-4 font-serif text-8xl text-gray-100 pointer-events-none">“</span>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="images/student 1.jpg"
+                    alt="Аружан Ибраева"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-20 w-20 rounded-full object-cover ring-4 ring-blue-50 sm:h-24 sm:w-24"
+                  />
+                  <div>
+                    <p class="text-xl font-bold text-gray-900">Аружан Ибраева</p>
+                    <span class="mt-1 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-600" data-i18n="test.route1">
+                      Алматы ✈ Вашингтон
+                    </span>
+                    <p class="mt-2 text-xs font-semibold text-rose-600">Work &amp; Travel USA</p>
+                  </div>
+                </div>
+                <p class="review-text mt-6 text-lg leading-relaxed text-slate-700 line-clamp-4" data-i18n="test.quote1">
+                  Я учусь на дизайне, и увидеть вживую работы в National Gallery of Art было моей мечтой. В первые дни в США было волнительно, но команда Темерлан постоянно была на связи и помогала с любыми вопросами по жилью. Работа в отеле помогла мне довести английский до уровня C1 и понять, как работает сервис мирового уровня. Привезла море вдохновения для диплома!
+                </p>
+                <button
+                  type="button"
+                  class="readmore-btn mt-4 cursor-pointer text-sm font-semibold text-rose-600 transition-all duration-300 ease-in-out hover:scale-105 hover:drop-shadow-sm focus:outline-none hover:underline"
+                  data-i18n="test.readMore"
+                >
+                  Читать полностью
+                </button>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="relative w-[85%] flex-none snap-center overflow-hidden rounded-2xl bg-white p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-2 sm:w-[460px] sm:p-10">
+                <span class="absolute bottom-4 right-4 font-serif text-8xl text-gray-100 pointer-events-none">“</span>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="images/student 2.jpg"
+                    alt="Данияр Кусаинов"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-20 w-20 rounded-full object-cover ring-4 ring-blue-50 sm:h-24 sm:w-24"
+                  />
+                  <div>
+                    <p class="text-xl font-bold text-gray-900">Данияр Кусаинов</p>
+                    <span class="mt-1 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-600" data-i18n="test.route2">
+                      Астана ✈ Нью-Йорк
+                    </span>
+                    <p class="mt-2 text-xs font-semibold text-rose-600">Work &amp; Travel USA</p>
+                  </div>
+                </div>
+                <p class="review-text mt-6 text-lg leading-relaxed text-slate-700 line-clamp-4" data-i18n="test.quote2">
+                  На Таймс-сквер темп бешеный, но чаевые того стоят! Благодаря тщательной подготовке к интервью в офисе TurFam, я получил визу без лишних вопросов. В итоге купил себе MacBook Air, о котором мечтал год, и еще остались деньги на подарки родителям. Это лето научило меня достигать своих финансовых целей.
+                </p>
+                <button
+                  type="button"
+                  class="readmore-btn mt-4 cursor-pointer text-sm font-semibold text-rose-600 transition-all duration-300 ease-in-out hover:scale-105 hover:drop-shadow-sm focus:outline-none hover:underline"
+                  data-i18n="test.readMore"
+                >
+                  Читать полностью
+                </button>
+              </article>
+
+              <!-- Card 3 -->
+              <article class="relative w-[85%] flex-none snap-center overflow-hidden rounded-2xl bg-white p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-2 sm:w-[460px] sm:p-10">
+                <span class="absolute bottom-4 right-4 font-serif text-8xl text-gray-100 pointer-events-none">“</span>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="images/student 3.jfif"
+                    alt="Санжар Аманжолов"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-20 w-20 rounded-full object-cover ring-4 ring-blue-50 sm:h-24 sm:w-24"
+                  />
+                  <div>
+                    <p class="text-xl font-bold text-gray-900">Санжар Аманжолов</p>
+                    <span class="mt-1 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-600" data-i18n="test.route3">
+                      Караганда ✈ Пейдж
+                    </span>
+                    <p class="mt-2 text-xs font-semibold text-rose-600">Work &amp; Travel USA</p>
+                  </div>
+                </div>
+                <p class="review-text mt-6 text-lg leading-relaxed text-slate-700 line-clamp-4" data-i18n="test.quote3">
+                  Я искал вайб свободы и нашел его в Аризоне. Работал спасателем, а в выходные мы с ребятами гоняли к Каньону Антилопы. Самое крутое — знать, что ты в другой стране, но TurFam всегда на связи. Я научился рассчитывать на себя и стал гораздо увереннее. Это было лучшее лето в моей жизни!
+                </p>
+                <button
+                  type="button"
+                  class="readmore-btn mt-4 cursor-pointer text-sm font-semibold text-rose-600 transition-all duration-300 ease-in-out hover:scale-105 hover:drop-shadow-sm focus:outline-none hover:underline"
+                  data-i18n="test.readMore"
+                >
+                  Читать полностью
+                </button>
+              </article>
+            </div>
+
+            <div class="mt-3 flex items-center justify-center gap-2 text-xs text-slate-500 sm:hidden">
+              <span class="inline-block h-2 w-2 rounded-full bg-rose-500"></span>
+              <span>Листайте вправо для других отзывов</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+
+      <!-- Journey timeline -->
+      <section id="journey" class="bg-slate-50 py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div>
+            <p class="text-sm font-bold italic tracking-wide text-rose-600" data-i18n="journey.kicker">ЭТАПЫ ПУТИ</p>
+            <h2 class="mt-2 text-3xl font-extrabold uppercase tracking-wide text-slate-900 sm:text-4xl">
+              <span data-i18n="journey.title">Ваш маршрут на лето в США</span>
+            </h2>
+            <p class="mt-3 max-w-2xl text-slate-700" data-i18n="journey.desc">
+              Понятный план и сроки — чтобы вы уверенно дошли до “ALOHA, USA!”.
+            </p>
+          </div>
+
+          <div class="mt-10 overflow-hidden rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(0,0,0,0.06)] ring-1 ring-slate-200/70 sm:p-10">
+            <div class="relative">
+              <!-- Central axis (vertical on mobile, horizontal on desktop) -->
+              <div
+                class="absolute left-6 top-6 bottom-6 w-1 rounded-full bg-[#0A192F] md:left-10 md:right-10 md:top-1/2 md:bottom-auto md:h-1 md:w-auto"
+                aria-hidden="true"
+              ></div>
+
+              <ol class="relative z-10 flex flex-col gap-8 md:grid md:grid-cols-5 md:gap-0">
+                <!-- Step 1 (title above, date below on desktop) -->
+                <li class="relative">
+                  <div class="flex items-start gap-4 md:hidden">
+                    <span class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-[#0A192F] text-lg font-extrabold text-white shadow-lg">1</span>
+                    <div class="min-w-0 pt-1">
+                      <div class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M9 3h6a2 2 0 0 1 2 2v16H7V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                          <path d="M9 9h6M9 13h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900" data-i18n="journey.step1.title">Регистрация</p>
+                      </div>
+                      <p class="mt-2 text-sm font-semibold text-slate-600" data-i18n="journey.step1.time">Сентябрь—Декабрь</p>
+                    </div>
+                  </div>
+
+                  <div class="hidden md:grid md:min-h-[220px] md:grid-rows-[1fr_auto_1fr] md:items-center md:justify-items-center">
+                    <div class="md:row-start-1 md:mb-6">
+                      <div class="flex items-center gap-3 md:flex-col md:text-center">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M9 3h6a2 2 0 0 1 2 2v16H7V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                          <path d="M9 9h6M9 13h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900 md:text-base" data-i18n="journey.step1.title">Регистрация</p>
+                      </div>
+                    </div>
+
+                    <div class="md:row-start-2">
+                      <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A192F] text-lg font-extrabold text-white shadow-lg">1</span>
+                    </div>
+
+                    <div class="md:row-start-3 md:mt-6">
+                      <p class="text-sm font-semibold text-slate-600 md:text-xs" data-i18n="journey.step1.time">Сентябрь—Декабрь</p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Step 2 (title below, date above on desktop) -->
+                <li class="relative">
+                  <div class="flex items-start gap-4 md:hidden">
+                    <span class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-[#0A192F] text-lg font-extrabold text-white shadow-lg">2</span>
+                    <div class="min-w-0 pt-1">
+                      <div class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M6 7h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/>
+                          <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900" data-i18n="journey.step2.title">Подбор вакансии</p>
+                      </div>
+                      <p class="mt-2 text-sm font-semibold text-slate-600" data-i18n="journey.step2.time">Январь—Март</p>
+                    </div>
+                  </div>
+
+                  <div class="hidden md:grid md:min-h-[220px] md:grid-rows-[1fr_auto_1fr] md:items-center md:justify-items-center">
+                    <div class="md:row-start-3 md:mt-6">
+                      <div class="flex items-center gap-3 md:flex-col md:text-center">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M6 7h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/>
+                          <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900 md:text-base" data-i18n="journey.step2.title">Подбор вакансии</p>
+                      </div>
+                    </div>
+
+                    <div class="md:row-start-2">
+                      <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A192F] text-lg font-extrabold text-white shadow-lg">2</span>
+                    </div>
+
+                    <div class="md:row-start-1 md:mb-6">
+                      <p class="text-sm font-semibold text-slate-600 md:text-xs" data-i18n="journey.step2.time">Январь—Март</p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Step 3 (title above, date below on desktop) -->
+                <li class="relative">
+                  <div class="flex items-start gap-4 md:hidden">
+                    <span class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-[#0A192F] text-lg font-extrabold text-white shadow-lg">3</span>
+                    <div class="min-w-0 pt-1">
+                      <div class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M7 4h10a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/>
+                          <path d="M10 8h6M10 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M10 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900" data-i18n="journey.step3.title">Визовое интервью</p>
+                      </div>
+                      <p class="mt-2 text-sm font-semibold text-slate-600" data-i18n="journey.step3.time">Апрель—Май</p>
+                    </div>
+                  </div>
+
+                  <div class="hidden md:grid md:min-h-[220px] md:grid-rows-[1fr_auto_1fr] md:items-center md:justify-items-center">
+                    <div class="md:row-start-1 md:mb-6">
+                      <div class="flex items-center gap-3 md:flex-col md:text-center">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M7 4h10a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/>
+                          <path d="M10 8h6M10 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M10 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900 md:text-base" data-i18n="journey.step3.title">Визовое интервью</p>
+                      </div>
+                    </div>
+
+                    <div class="md:row-start-2">
+                      <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A192F] text-lg font-extrabold text-white shadow-lg">3</span>
+                    </div>
+
+                    <div class="md:row-start-3 md:mt-6">
+                      <p class="text-sm font-semibold text-slate-600 md:text-xs" data-i18n="journey.step3.time">Апрель—Май</p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Step 4 (title below, date above on desktop) -->
+                <li class="relative">
+                  <div class="flex items-start gap-4 md:hidden">
+                    <span class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-[#0A192F] text-lg font-extrabold text-white shadow-lg">4</span>
+                    <div class="min-w-0 pt-1">
+                      <div class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M3 11v2a2 2 0 0 0 2 2h1l8 4V5L6 9H5a2 2 0 0 0-2 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                          <path d="M14 8h4a3 3 0 0 1 0 8h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M7 15l1 4a2 2 0 0 0 2 1h1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900" data-i18n="journey.step4.title">Pre-Departure Orientation</p>
+                      </div>
+                      <p class="mt-2 text-sm font-semibold text-slate-600" data-i18n="journey.step4.time">Май</p>
+                    </div>
+                  </div>
+
+                  <div class="hidden md:grid md:min-h-[220px] md:grid-rows-[1fr_auto_1fr] md:items-center md:justify-items-center">
+                    <div class="md:row-start-3 md:mt-6">
+                      <div class="flex items-center gap-3 md:flex-col md:text-center">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M3 11v2a2 2 0 0 0 2 2h1l8 4V5L6 9H5a2 2 0 0 0-2 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                          <path d="M14 8h4a3 3 0 0 1 0 8h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M7 15l1 4a2 2 0 0 0 2 1h1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900 md:text-base" data-i18n="journey.step4.title">Pre-Departure Orientation</p>
+                      </div>
+                    </div>
+
+                    <div class="md:row-start-2">
+                      <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A192F] text-lg font-extrabold text-white shadow-lg">4</span>
+                    </div>
+
+                    <div class="md:row-start-1 md:mb-6">
+                      <p class="text-sm font-semibold text-slate-600 md:text-xs" data-i18n="journey.step4.time">Май</p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Step 5 (final destination; title above, date below on desktop) -->
+                <li class="relative">
+                  <div class="flex items-start gap-4 md:hidden">
+                    <span class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-red-500 text-lg font-extrabold text-white shadow-lg shadow-[0_0_20px_rgba(239,68,68,0.4)]">5</span>
+                    <div class="min-w-0 pt-1">
+                      <div class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M12 2l1 4-1 2-1-2 1-4Z" fill="currentColor"/>
+                          <path d="M9 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M10 10v10h4V10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                          <path d="M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900" data-i18n="journey.step5.title">ALOHA, USA!</p>
+                      </div>
+                      <p class="mt-2 text-sm font-semibold text-rose-600" data-i18n="journey.step5.time">Май—Июнь</p>
+                    </div>
+                  </div>
+
+                  <div class="hidden md:grid md:min-h-[220px] md:grid-rows-[1fr_auto_1fr] md:items-center md:justify-items-center">
+                    <div class="relative md:row-start-1 md:mb-6">
+                      <div class="flex items-center gap-3 md:flex-col md:text-center">
+                        <svg class="h-6 w-6 text-[#0A192F]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M12 2l1 4-1 2-1-2 1-4Z" fill="currentColor"/>
+                          <path d="M9 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M10 10v10h4V10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                          <path d="M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-sm font-extrabold text-slate-900 md:text-base" data-i18n="journey.step5.title">ALOHA, USA!</p>
+                      </div>
+
+                      <svg
+                        class="pointer-events-none absolute -right-10 -top-6 hidden h-20 w-20 text-slate-400/40 md:block"
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path d="M16 54c8-18 24-18 32 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M32 12c-3 6 0 10 0 14s-3 8-3 12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M32 12c3 6 0 10 0 14s3 8 3 12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M22 24l10-6 10 6" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+
+                    <div class="md:row-start-2">
+                      <span class="flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-lg font-extrabold text-white shadow-lg shadow-[0_0_20px_rgba(239,68,68,0.4)]">5</span>
+                    </div>
+
+                    <div class="md:row-start-3 md:mt-6">
+                      <p class="text-sm font-semibold text-rose-600 md:text-xs" data-i18n="journey.step5.time">Май—Июнь</p>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="bg-slate-50 py-16 md:py-24">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <p class="text-sm font-bold italic tracking-wide text-rose-600">FAQ</p>
+            <h2 class="mt-2 text-3xl font-extrabold uppercase tracking-wide text-slate-900 sm:text-4xl" data-i18n="faq.title">
+              Часто задаваемые вопросы
+            </h2>
+            <p class="mx-auto mt-4 max-w-2xl text-slate-700">
+              Ответы на самые частые вопросы — чтобы вы понимали условия заранее.
+            </p>
+          </div>
+
+          <div id="faqAccordion" class="mt-12 space-y-4">
+            <!-- Item 1 -->
+            <div class="overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70">
+              <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left sm:p-8" type="button" aria-expanded="false" data-faq="0">
+                <span class="text-base font-extrabold text-slate-900 sm:text-lg" data-i18n="faq.q1">Кто может участвовать в программе?</span>
+                <svg class="faq-icon h-5 w-5 flex-none text-slate-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300" data-faq-panel="0">
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed sm:px-8 sm:pb-8" data-i18n="faq.a1">
+                  Студенты очного отделения (full-time) аккредитованных вузов Казахстана. Важно иметь статус студента на момент подачи и владеть английским на уровне не ниже Pre-Intermediate.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70">
+              <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left sm:p-8" type="button" aria-expanded="false" data-faq="1">
+                <span class="text-base font-extrabold text-slate-900 sm:text-lg" data-i18n="faq.q2">Какие гарантии получения визы вы даете?</span>
+                <svg class="faq-icon h-5 w-5 flex-none text-slate-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300" data-faq-panel="1">
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed sm:px-8 sm:pb-8" data-i18n="faq.a2">
+                  Решение всегда за консулом, но TurFam сводит технические риски к минимуму. Каждая анкета DS-160 проходит многоуровневый ручной аудит, что исключает ошибки, из-за которых чаще всего приходят отказы.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70">
+              <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left sm:p-8" type="button" aria-expanded="false" data-faq="2">
+                <span class="text-base font-extrabold text-slate-900 sm:text-lg" data-i18n="faq.q3">Когда лучше всего начинать регистрацию?</span>
+                <svg class="faq-icon h-5 w-5 flex-none text-slate-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300" data-faq-panel="2">
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed sm:px-8 sm:pb-8" data-i18n="faq.a3">
+                  Идеальное время — с сентября по декабрь. Это дает возможность выбрать лучшие вакансии и спокойно подготовиться к визовому интервью в апреле-мае.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70">
+              <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left sm:p-8" type="button" aria-expanded="false" data-faq="3">
+                <span class="text-base font-extrabold text-slate-900 sm:text-lg" data-i18n="faq.q4">Нужно ли мне самому искать жилье в США?</span>
+                <svg class="faq-icon h-5 w-5 flex-none text-slate-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300" data-faq-panel="3">
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed sm:px-8 sm:pb-8" data-i18n="faq.a4">
+                  В большинстве случаев работодатель или спонсор предоставляют варианты жилья. Мы проверяем каждый оффер, чтобы условия проживания были безопасными и комфортными.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70">
+              <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left sm:p-8" type="button" aria-expanded="false" data-faq="4">
+                <span class="text-base font-extrabold text-slate-900 sm:text-lg" data-i18n="faq.q5">Что делать, если в США возникнет экстренная ситуация?</span>
+                <svg class="faq-icon h-5 w-5 flex-none text-slate-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300" data-faq-panel="4">
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed sm:px-8 sm:pb-8" data-i18n="faq.a5">
+                  У вас будет доступ к круглосуточной линии поддержки 24/7. Мы остаемся на связи до момента вашего возвращения в Астану и помогаем в решении любых вопросов со спонсором или работодателем.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70">
+              <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left sm:p-8" type="button" aria-expanded="false" data-faq="5">
+                <span class="text-base font-extrabold text-slate-900 sm:text-lg" data-i18n="faq.q6">Вернут ли деньги при отказе в визе?</span>
+                <svg class="faq-icon h-5 w-5 flex-none text-slate-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300" data-faq-panel="5">
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed sm:px-8 sm:pb-8" data-i18n="faq.a6">
+                  Да, в случае отказа в визе предусмотрен частичный возврат средств за вычетом невозвратных регистрационных сборов. Подробные условия фиксируются в официальном договоре.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70">
+              <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left sm:p-8" type="button" aria-expanded="false" data-faq="6">
+                <span class="text-base font-extrabold text-slate-900 sm:text-lg" data-i18n="faq.q7">Сколько нужно брать с собой на первое время?</span>
+                <svg class="faq-icon h-5 w-5 flex-none text-slate-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300" data-faq-panel="6">
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed sm:px-8 sm:pb-8" data-i18n="faq.a7">
+                  Мы рекомендуем брать с собой от $800 до $1000. Эти деньги понадобятся для оплаты депозита за жилье, питания и проезда до получения первой зарплаты (обычно через 2 недели).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="contacts" class="bg-deepblue-950 text-white">
+        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+            <div class="hidden md:flex flex-col items-center gap-6 text-center lg:w-1/3 lg:items-start lg:text-left">
+              <img src="images/logo.png" alt="TurFam Visa" class="h-10 object-contain" loading="lazy" decoding="async" />
+              <p class="max-w-sm text-base text-white/80 md:text-sm" data-i18n="footer.slogan">Ваш надежный проводник в США</p>
+
+              <div class="flex gap-4 items-center text-gray-400 lg:justify-start">
+                <a
+                  class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-white/90 hover:text-blue-400 transition-colors"
+                  href="https://www.instagram.com/turfam_visa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  title="Instagram"
+                >
+                  <svg class="h-7 w-7 md:h-6 md:w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7.5 2.5h9A5 5 0 0 1 21.5 7.5v9a5 5 0 0 1-5 5h-9a5 5 0 0 1-5-5v-9a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="1.8" />
+                    <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.8" />
+                    <path d="M17.35 6.8h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                  </svg>
+                </a>
+                <a
+                  class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-white/90 hover:text-blue-400 transition-colors"
+                  href="#"
+                  aria-label="Facebook"
+                  title="Facebook"
+                >
+                  <svg class="h-7 w-7 md:h-6 md:w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M14 8h3V5h-3c-2.21 0-4 1.79-4 4v3H7v3h3v6h3v-6h3l1-3h-4V9c0-.55.45-1 1-1Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:w-1/3">
+              <p class="text-base font-extrabold uppercase tracking-wide text-white md:text-sm" data-i18n="footer.contactTitle">СВЯЗАТЬСЯ</p>
+
+              <div class="mt-6 space-y-5 text-white/85">
+                <div class="flex items-center gap-3">
+                  <svg class="h-5 w-5 flex-none text-white/70" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.45 2.1L8 9.3a16 16 0 0 0 6.7 6.7l1.2-1.25a2 2 0 0 1 2.1-.45c.7.3 1.5.5 2.3.6a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <a href="tel:+77066562079" class="inline-flex min-h-[44px] md:min-h-[0px] items-center text-xl font-bold hover:text-blue-400 transition-colors cursor-pointer">
+                    +7 (706) 656-20-79
+                  </a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <svg class="h-5 w-5 flex-none text-white/70" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <a href="mailto:info@turfam.kz" class="inline-flex min-h-[44px] md:min-h-[0px] items-center text-lg font-bold hover:text-blue-400 transition-colors cursor-pointer">
+                    info@turfam.kz
+                  </a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <svg class="h-5 w-5 flex-none text-white/70" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 22s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M12 11.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" stroke="currentColor" stroke-width="1.8" />
+                  </svg>
+                  <span class="text-base md:text-sm" data-i18n="footer.location">Астана, Казахстан</span>
+                </div>
+
+                <div class="text-base text-white/75 md:text-sm lg:pl-8" data-i18n="footer.address">
+                  Бизнес-центр, ул. Сыганак, 54а, 14 этаж, Есильский район, 010017.
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:w-1/3">
+              <div class="overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_0_40px_rgba(59,130,246,0.16)]">
+                <div class="relative h-48 w-full md:h-64">
+                  <button
+                    id="mapFacade"
+                    type="button"
+                    class="group absolute inset-0 flex h-full w-full items-center justify-center bg-[#081226] focus:outline-none focus:ring-2 focus:ring-white/30"
+                    aria-label="Загрузить карту"
+                  >
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5"></div>
+                    <div class="relative flex flex-col items-center gap-3 px-6 text-center">
+                      <svg class="h-10 w-10 text-white/85" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 22s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                        <path d="M12 11.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" stroke="currentColor" stroke-width="1.8" />
+                      </svg>
+                      <div class="text-sm font-semibold text-white/90">54A Syganak St</div>
+                      <div class="text-xs text-white/60 group-hover:hidden">Нажмите, чтобы загрузить карту</div>
+                      <div class="hidden items-center gap-2 text-xs text-white/70 group-hover:flex">
+                        <span class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white/80"></span>
+                        <span>Loading…</span>
+                      </div>
+                    </div>
+                  </button>
+
+                  <div id="mapIframeWrapper" class="absolute inset-0 hidden h-full w-full">
+                    <div class="pointer-events-none absolute inset-0 bg-[#0A192F]/55 mix-blend-multiply"></div>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="https://www.google.com/maps?q=%D1%83%D0%BB.%20%D0%A1%D1%8B%D0%B3%D0%B0%D0%BD%D0%B0%D0%BA%2054%D0%B0%2C%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex min-h-[44px] md:min-h-[0px] w-full items-center justify-center rounded-xl bg-white/5 px-4 py-3 text-base font-semibold text-white hover:bg-white/10 hover:text-blue-400 transition-colors md:text-sm"
+                aria-label="Открыть в Google Maps"
+              >
+                Open in Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center text-sm text-gray-500 mt-4" data-i18n="footer.copyright">
+            © 2026 TurFam. Все права защищены.
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <div class="fixed bottom-0 left-0 w-full bg-gradient-to-t from-[#FAF9F6] via-[#FAF9F6] to-transparent pt-3 pb-2 px-4 z-50 flex justify-center items-center block md:hidden" aria-label="Sticky footer">
+      <a href="#contacts" class="w-full bg-[#0A192F] text-white/90 text-[14px] font-extrabold uppercase tracking-widest rounded-full py-4 text-center shadow-[0_0_20px_rgba(255,255,255,0.4)] border border-white/10 relative">
+        БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
+        <svg class="text-white w-6 h-6 absolute -top-3 -right-2 drop-shadow-md" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2l1.6 5 5 .9-4 3.2.9 5-4.5-2.6L6.5 16l.9-5-4-3.2 5-.9L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Floating WhatsApp widget (bottom-right) -->
+    <a
+      href="https://api.whatsapp.com/send/?phone=77066562079&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0+Work+and+Travel+USA.+%D0%A5%D0%BE%D1%87%D1%83+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E.&type=phone_number&app_absent=0"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden md:inline-flex group fixed bottom-20 right-4 z-40 inline-flex min-h-[44px] min-w-[44px] items-center justify-center bg-[#25D366] text-white p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/60 md:bottom-6 md:right-6 md:z-50 md:h-14 md:w-14 md:bg-transparent md:p-0 md:shadow-2xl hover:shadow-lg"
+      aria-label="WhatsApp — написать TurFam"
+      title="WhatsApp"
+    >
+      <span class="pointer-events-none absolute inset-0.5 rounded-full bg-[#25D366] transition-colors duration-300 group-hover:bg-[#1DA851] md:inset-0"></span>
+      <span class="pointer-events-none absolute inset-0.5 rounded-full bg-[#25D366]/20 animate-ping md:inset-0"></span>
+      <span class="pointer-events-none absolute inset-1 rounded-full bg-[#25D366]/15 animate-pulse md:inset-0.5"></span>
+      <svg class="relative h-6 w-6 text-white md:h-8 md:w-8" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path
+          d="M19.11 17.2c-.25-.13-1.47-.73-1.7-.81-.23-.08-.4-.13-.56.13-.16.25-.65.81-.8.98-.15.16-.29.19-.54.06-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.38-.44.13-.15.16-.25.25-.41.08-.16.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.41.06-.63.31-.22.25-.82.8-.82 1.95 0 1.15.84 2.26.96 2.42.12.16 1.65 2.52 4 3.54.56.24 1 .39 1.34.5.56.18 1.07.15 1.48.09.45-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.31Z"
+        />
+        <path
+          d="M26.7 5.3A14.88 14.88 0 0 0 16.06 1 14.98 14.98 0 0 0 1.1 16c0 2.64.7 5.22 2.04 7.49L1 31l7.69-2.01A14.94 14.94 0 0 0 16.06 31c8.27 0 15-6.73 15-15 0-4.01-1.56-7.78-4.36-10.7ZM16.06 28.4c-2.31 0-4.58-.63-6.56-1.82l-.47-.28-4.56 1.19 1.22-4.43-.31-.46A12.36 12.36 0 0 1 3.7 16c0-6.82 5.55-12.37 12.36-12.37 3.3 0 6.4 1.28 8.73 3.6a12.25 12.25 0 0 1 3.63 8.77c0 6.82-5.55 12.4-12.36 12.4Z"
+        />
+      </svg>
+    </a>
+
+    <a
+      href="https://api.whatsapp.com/send/?phone=77066562079&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0+Work+and+Travel+USA.+%D0%A5%D0%BE%D1%87%D1%83+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E.&type=phone_number&app_absent=0"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-20 right-4 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-lg md:hidden"
+      aria-label="WhatsApp — написать TurFam"
+      title="WhatsApp"
+    >
+      <svg class="h-6 w-6 text-white" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path
+          d="M19.11 17.2c-.25-.13-1.47-.73-1.7-.81-.23-.08-.4-.13-.56.13-.16.25-.65.81-.8.98-.15.16-.29.19-.54.06-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.38-.44.13-.15.16-.25.25-.41.08-.16.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.41.06-.63.31-.22.25-.82.8-.82 1.95 0 1.15.84 2.26.96 2.42.12.16 1.65 2.52 4 3.54.56.24 1 .39 1.34.5.56.18 1.07.15 1.48.09.45-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.31Z"
+        />
+        <path
+          d="M26.7 5.3A14.88 14.88 0 0 0 16.06 1 14.98 14.98 0 0 0 1.1 16c0 2.64.7 5.22 2.04 7.49L1 31l7.69-2.01A14.94 14.94 0 0 0 16.06 31c8.27 0 15-6.73 15-15 0-4.01-1.56-7.78-4.36-10.7ZM16.06 28.4c-2.31 0-4.58-.63-6.56-1.82l-.47-.28-4.56 1.19 1.22-4.43-.31-.46A12.36 12.36 0 0 1 3.7 16c0-6.82 5.55-12.37 12.36-12.37 3.3 0 6.4 1.28 8.73 3.6a12.25 12.25 0 0 1 3.63 8.77c0 6.82-5.55 12.4-12.36 12.4Z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileMenuBackdrop = document.getElementById("mobileMenuBackdrop");
+      const mobileMenuClose = document.getElementById("mobileMenuClose");
+
+      function isMobileMenuOpen() {
+        return mobileMenuBtn?.getAttribute("aria-expanded") === "true";
+      }
+
+      function closeMobileMenu() {
+        if (!mobileMenu || !mobileMenuBtn || !mobileMenuBackdrop) return;
+        mobileMenu.classList.add("translate-x-full");
+        mobileMenu.classList.remove("translate-x-0");
+        mobileMenuBackdrop.classList.remove("opacity-100");
+        mobileMenuBackdrop.classList.add("opacity-0");
+        document.body.classList.remove("overflow-hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+        window.setTimeout(() => mobileMenuBackdrop.classList.add("hidden"), 300);
+      }
+
+      function openMobileMenu() {
+        if (!mobileMenu || !mobileMenuBtn || !mobileMenuBackdrop) return;
+        mobileMenuBackdrop.classList.remove("hidden");
+        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+        document.body.classList.add("overflow-hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "true");
+        requestAnimationFrame(() => {
+          mobileMenuBackdrop.classList.add("opacity-100");
+          mobileMenuBackdrop.classList.remove("opacity-0");
+        });
+      }
+
+      mobileMenuBtn?.addEventListener("click", () => {
+        if (isMobileMenuOpen()) closeMobileMenu();
+        else openMobileMenu();
+      });
+
+      mobileMenuClose?.addEventListener("click", closeMobileMenu);
+      mobileMenuBackdrop?.addEventListener("click", closeMobileMenu);
+
+      mobileMenu?.querySelectorAll('a[href^="#"], a[href^="tel:"]').forEach((a) => {
+        a.addEventListener("click", () => closeMobileMenu());
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return;
+        if (isMobileMenuOpen()) closeMobileMenu();
+      });
+
+      // -----------------------
+      // Language toggle (RU | EN)
+      // -----------------------
+      const langRU = document.getElementById("langRU");
+      const langEN = document.getElementById("langEN");
+      const langRU_M = document.getElementById("langRU_M");
+      const langEN_M = document.getElementById("langEN_M");
+
+      const translations = {
+        RU: {
+          "nav.worktravel": "WORK & TRAVEL USA",
+          "nav.jobs": "РАБОТА",
+          "nav.requirements": "ТРЕБОВАНИЯ",
+          "nav.contacts": "КОНТАКТЫ",
+
+          "hero.kicker": "Start your journey with TurFam!",
+          "hero.title": "WORK AND TRAVEL USA",
+          "hero.subtitle":
+            "Легально работайте, путешествуйте и прокачайте английский за одно лето — с сопровождением TurFam от регистрации до вылета.",
+          "hero.ctaPrimary": "EMPLOYERS",
+          "hero.ctaSecondary": "Узнать о программе",
+          "hero.feature1.desc": "Юридическая поддержка и сопровождение",
+          "hero.feature2.title": "Работа + Travel",
+          "hero.feature2.desc": "Лето в США и практика английского",
+          "hero.feature3.title": "Поддержка 24/7",
+          "hero.feature3.desc": "Четкий маршрут от заявки до вылета",
+          "hero.glass1.title": "ПОДДЕРЖКА ПО ВИЗЕ J-1",
+          "hero.glass1.desc": "Полное сопровождение на всех этапах оформления документов.",
+          "hero.glass2.title": "РАБОТА И ПУТЕШЕСТВИЯ",
+          "hero.glass2.desc": "Работай, зарабатывай и путешествуй по всей Америке.",
+          "hero.glass3.title": "ПРОВЕРЕННЫЕ ВАКАНСИИ",
+          "hero.glass3.desc": "Надежные работодатели и полная подготовка к интервью.",
+          "hero.glass4.title": "ПОДДЕРЖКА 24/7",
+          "hero.glass4.desc": "Команда всегда на связи. Четкий маршрут от заявки до вылета.",
+
+          "stats.sub1": "Минимальная ставка в час",
+          "stats.sub2": "Юридическая поддержка",
+          "stats.sub3": "На связи в США",
+          "stats.sub4": "Профессионализм",
+          "stats.support": "Поддержка",
+
+          "why.kicker": "Что Мы Делаем?",
+          "why.title": "ПРОГРАММА «WORK AND TRAVEL USA»",
+          "why.desc":
+            "Мы предоставляем необходимую юридическую поддержку для получения визы J1, которая позволяет участвовать в программе оплачиваемого трудового обмена в США студентам университетов и вузов в возрасте от 18 до 28 лет со средним или продвинутым уровнем владения английским языком.",
+          "why.cta": "ТРЕБОВАНИЯ",
+          "why.note": "Быстро проверим соответствие и подскажем следующий шаг.",
+
+          "jobs.kicker": "ВАКАНСИИ",
+          "jobs.title": "Категории работ",
+          "jobs.desc": "Выберите направление и мы подберем работодателя под ваш английский и цели.",
+          "jobs.cta": "Получить консультацию",
+          "jobs.card1.title": "ПАРКИ АТТРАКЦИОНОВ",
+          "jobs.card1.salary": "ЗАРПЛАТА: ОТ $15.50 / ЧАС",
+          "jobs.card1.desc": "Работа оператором аттракционов или в зоне ритейла. Стабильный график и overtime.",
+          "jobs.card1.b1": "Работа оператором аттракционов.",
+          "jobs.card1.b2": "Стабильный график.",
+          "jobs.card1.b3": "Возможность overtime.",
+          "jobs.card2.title": "СПАСАТЕЛИ (LIFEGUARD)",
+          "jobs.card2.salary": "ЗАРПЛАТА: ОТ $16.00 / ЧАС",
+          "jobs.card2.desc": "Ответственная работа у бассейна. Бесплатное обучение и сертификация.",
+          "jobs.card2.b1": "Ответственная работа.",
+          "jobs.card2.b2": "Бесплатное обучение.",
+          "jobs.card2.b3": "Сертификация США.",
+          "jobs.card3.title": "ГОСТЕПРИИМСТВО И СЕРВИС",
+          "jobs.card3.salary": "ЗАРПЛАТА: $10 - $14 / ЧАС + ЧАЕВЫЕ",
+          "jobs.card3.desc": "Вакансии официантов, хостес и сотрудников отелей. Практика английского.",
+          "jobs.card3.b1": "Официанты и хостес.",
+          "jobs.card3.b2": "Сотрудники отелей.",
+          "jobs.card3.b3": "Практика английского.",
+
+          "req.title": "ТРЕБОВАНИЯ",
+          "req.item1": "В ВОЗРАСТЕ ОТ 18 ДО 28 ЛЕТ",
+          "req.item2": "БЫТЬ СТУДЕНТОМ УНИВЕРСИТЕТА",
+          "req.item3": "АНГЛИЙСКИЙ ЯЗЫК ОТ INTERMEDIATE И ВЫШЕ",
+          "req.cta": "Записаться на консультацию",
+          "req.note": "Ответим быстро и подскажем, подойдёт ли программа.",
+
+          "test.kicker": "ОТЗЫВЫ",
+          "test.title": "Истории участников",
+          "test.desc": "Реальные впечатления студентов — как прошла работа, путешествия и рост.",
+          "test.route1": "Алматы ✈ Вашингтон",
+          "test.route2": "Астана ✈ Нью-Йорк",
+          "test.route3": "Караганда ✈ Пейдж",
+          "test.quote1":
+            "Я учусь на дизайне, и увидеть вживую работы в National Gallery of Art было моей мечтой. В первые дни в США было волнительно, но команда TurFam постоянно была на связи и помогала с любыми вопросами по жилью. Работа в отеле помогла мне довести английский до уровня C1 и понять, как работает сервис мирового уровня. Привезла море вдохновения для диплома!",
+          "test.quote2":
+            "На Таймс-сквер темп бешеный, но чаевые того стоят! Благодаря тщательной подготовке к интервью в офисе TurFam, я получил визу без лишних вопросов. В итоге купил себе MacBook Air, о котором мечтал год, и еще остались деньги на подарки родителям. Это лето научило меня достигать своих финансовых целей.",
+          "test.quote3":
+            "Я искал вайб свободы и нашел его в Аризоне. Работал спасателем, а в выходные мы с ребятами гоняли к Каньону Антилопы. Самое крутое — знать, что ты в другой стране, но TurFam всегда на связи. Я научился рассчитывать на себя и стал гораздо увереннее. Это было лучшее лето в моей жизни!",
+          "test.readMore": "Читать полностью",
+          "test.showLess": "Скрыть",
+
+          "journey.kicker": "ЭТАПЫ ПУТИ",
+          "journey.title": "Ваш маршрут на лето в США",
+          "journey.desc": "Понятный план и сроки — чтобы вы уверенно дошли до “ALOHA, USA!”.",
+          "journey.step1.title": "Регистрация",
+          "journey.step1.time": "Сентябрь—Декабрь",
+          "journey.step2.title": "Подбор вакансии",
+          "journey.step2.time": "Январь—Март",
+          "journey.step3.title": "Визовое интервью",
+          "journey.step3.time": "Апрель—Май",
+          "journey.step4.title": "Pre-Departure Orientation",
+          "journey.step4.time": "Май",
+          "journey.step5.title": "ALOHA, USA!",
+          "journey.step5.time": "Май—Июнь",
+
+          "faq.title": "Часто задаваемые вопросы",
+          "faq.q1": "Кто может участвовать в программе?",
+          "faq.a1":
+            "Студенты очного отделения (full-time) аккредитованных вузов Казахстана. Важно иметь статус студента на момент подачи и владеть английским на уровне не ниже Pre-Intermediate.",
+          "faq.q2": "Какие гарантии получения визы вы даете?",
+          "faq.a2":
+            "Решение всегда за консулом, но TurFam сводит технические риски к минимуму. Каждая анкета DS-160 проходит многоуровневый ручной аудит, что исключает ошибки, из-за которых чаще всего приходят отказы.",
+          "faq.q3": "Когда лучше всего начинать регистрацию?",
+          "faq.a3":
+            "Идеальное время — с сентября по декабрь. Это дает возможность выбрать лучшие вакансии и спокойно подготовиться к визовому интервью в апреле-мае.",
+          "faq.q4": "Нужно ли мне самому искать жилье в США?",
+          "faq.a4":
+            "В большинстве случаев работодатель или спонсор предоставляют варианты жилья. Мы проверяем каждый оффер, чтобы условия проживания были безопасными и комфортными.",
+          "faq.q5": "Что делать, если в США возникнет экстренная ситуация?",
+          "faq.a5":
+            "У вас будет доступ к круглосуточной линии поддержки 24/7. Мы остаемся на связи до момента вашего возвращения в Астану и помогаем в решении любых вопросов со спонсором или работодателем.",
+          "faq.q6": "Вернут ли деньги при отказе в визе?",
+          "faq.a6":
+            "Да, в случае отказа в визе предусмотрен частичный возврат средств за вычетом невозвратных регистрационных сборов. Подробные условия фиксируются в официальном договоре.",
+          "faq.q7": "Сколько нужно брать с собой на первое время?",
+          "faq.a7":
+            "Мы рекомендуем брать с собой от $800 до $1000. Эти деньги понадобятся для оплаты депозита за жилье, питания и проезда до получения первой зарплаты (обычно через 2 недели).",
+
+          "footer.slogan": "Ваш надежный проводник в США",
+          "footer.contactTitle": "СВЯЗАТЬСЯ",
+          "footer.phone": "Телефон:",
+          "footer.whatsAppHint": "Напишите нам в WhatsApp",
+          "footer.location": "Астана, Казахстан",
+          "footer.address": "Бизнес-центр, ул. Сыганак, 54а, 14 этаж, Есильский район, 010017.",
+          "footer.copyright": "© 2026 TurFam. Все права защищены."
+        },
+        EN: {
+          "nav.worktravel": "WORK & TRAVEL USA",
+          "nav.jobs": "JOBS",
+          "nav.requirements": "REQUIREMENTS",
+          "nav.contacts": "CONTACTS",
+
+          "hero.kicker": "Start your journey with TurFam!",
+          "hero.title": "WORK AND TRAVEL USA",
+          "hero.subtitle":
+            "Work legally, travel, and boost your English in one summer — with TurFam support from registration to departure.",
+          "hero.ctaPrimary": "EMPLOYERS",
+          "hero.ctaSecondary": "Learn More",
+          "hero.feature1.desc": "Legal support and guidance",
+          "hero.feature2.title": "Work + Travel",
+          "hero.feature2.desc": "Summer in the USA and English practice",
+          "hero.feature3.title": "24/7 Support",
+          "hero.feature3.desc": "Clear roadmap from application to departure",
+          "hero.glass1.title": "J-1 VISA SUPPORT",
+          "hero.glass1.desc": "Complete application guidance.",
+          "hero.glass2.title": "EARN & TRAVEL",
+          "hero.glass2.desc": "Work, save, and see the USA.",
+          "hero.glass3.title": "DREAM JOB PLACEMENT",
+          "hero.glass3.desc": "Vetted job offers and interviews.",
+          "hero.glass4.title": "24/7 SUPPORT",
+          "hero.glass4.desc": "Dedicated Russian and English team.",
+
+          "stats.sub1": "Minimum hourly rate",
+          "stats.sub2": "Legal support",
+          "stats.sub3": "24/7 US Support",
+          "stats.sub4": "Professionalism",
+          "stats.support": "Support",
+
+          "why.kicker": "What We Do?",
+          "why.title": "THE “WORK AND TRAVEL USA” PROGRAM",
+          "why.desc":
+            "We provide the legal support needed to obtain the J-1 visa, which allows university students aged 18 to 28 with intermediate or advanced English to participate in a paid cultural exchange program in the USA.",
+          "why.cta": "REQUIREMENTS",
+          "why.note": "We’ll quickly check eligibility and tell you the next step.",
+
+          "jobs.kicker": "VACANCIES",
+          "jobs.title": "Job categories",
+          "jobs.desc": "Choose a direction and we’ll match you with an employer based on your English and goals.",
+          "jobs.cta": "Get a consultation",
+          "jobs.card1.title": "AMUSEMENT PARKS",
+          "jobs.card1.salary": "SALARY: FROM $15.50 / HR",
+          "jobs.card1.desc": "Ride operator or retail work. Stable schedule and overtime.",
+          "jobs.card1.b1": "Ride operator work.",
+          "jobs.card1.b2": "Stable schedule.",
+          "jobs.card1.b3": "Overtime opportunities.",
+          "jobs.card2.title": "LIFEGUARDS",
+          "jobs.card2.salary": "SALARY: FROM $16.00 / HR",
+          "jobs.card2.desc": "Responsible work at the pool. Free training and certification.",
+          "jobs.card2.b1": "Responsible role.",
+          "jobs.card2.b2": "Free training.",
+          "jobs.card2.b3": "US certification.",
+          "jobs.card3.title": "HOSPITALITY AND SERVICE",
+          "jobs.card3.salary": "SALARY: $10 - $14 / HR + TIPS",
+          "jobs.card3.desc": "Waitstaff, hostess, and hotel staff positions. English practice.",
+          "jobs.card3.b1": "Waiters and hosts.",
+          "jobs.card3.b2": "Hotel staff.",
+          "jobs.card3.b3": "English practice.",
+
+          "req.title": "REQUIREMENTS",
+          "req.item1": "AGED 18 TO 28 YEARS OLD",
+          "req.item2": "BE A UNIVERSITY STUDENT",
+          "req.item3": "ENGLISH LEVEL INTERMEDIATE OR HIGHER",
+          "req.cta": "Book a consultation",
+          "req.note": "We will answer quickly and let you know if the program suits you.",
+
+          "test.kicker": "TESTIMONIALS",
+          "test.title": "Student stories",
+          "test.desc": "Real impressions — how work, travel, and growth actually felt.",
+          "test.route1": "Almaty ✈ Washington",
+          "test.route2": "Astana ✈ New York",
+          "test.route3": "Karaganda ✈ Page",
+          "test.quote1":
+            "I study design, and seeing the works at the National Gallery of Art in person was my dream. The first days in the US were exciting, but the Temerlan team was always in touch and helped with any housing questions. Working at a hotel helped me improve my English to C1 and understand what world‑class service looks like. I brought back a huge amount of inspiration for my thesis!",
+          "test.quote2":
+            "Times Square moves at a crazy pace, but the tips are worth it! Thanks to thorough interview preparation at the TurFam office, I got my visa without extra questions. I ended up buying the MacBook Air I’d dreamed about for a year — and still had money left for gifts for my parents. This summer taught me how to reach my financial goals.",
+          "test.quote3":
+            "I was looking for a freedom vibe — and found it in Arizona. I worked as a lifeguard, and on weekends we drove to Antelope Canyon. The best part is knowing you’re in another country, but TurFam is always there. I learned to rely on myself and became much more confident. It was the best summer of my life!",
+          "test.readMore": "Read full story",
+          "test.showLess": "Show less",
+
+          "journey.kicker": "YOUR JOURNEY",
+          "journey.title": "Your roadmap to the USA",
+          "journey.desc": "Clear steps and timelines — so you confidently reach “ALOHA, USA!”.",
+          "journey.step1.title": "Registration",
+          "journey.step1.time": "September—December",
+          "journey.step2.title": "Job Matching",
+          "journey.step2.time": "January—March",
+          "journey.step3.title": "Visa Interview",
+          "journey.step3.time": "April—May",
+          "journey.step4.title": "Pre-Departure Orientation",
+          "journey.step4.time": "May",
+          "journey.step5.title": "ALOHA, USA!",
+          "journey.step5.time": "May—June",
+
+          "faq.title": "Frequently Asked Questions",
+          "faq.q1": "Who can participate in the program?",
+          "faq.a1":
+            "Full-time students of accredited universities in Kazakhstan. It is important to have student status at the time of application and English proficiency of at least Pre-Intermediate level.",
+          "faq.q2": "What guarantees do you provide for getting a visa?",
+          "faq.a2":
+            "The decision is always up to the consul, but TurFam minimizes technical risks. Each DS-160 form undergoes a multi-level manual audit, eliminating errors that most often lead to refusals.",
+          "faq.q3": "When is the best time to start registration?",
+          "faq.a3":
+            "The ideal time is from September to December. This gives you the opportunity to choose the best jobs and calmly prepare for the visa interview in April-May.",
+          "faq.q4": "Do I need to look for housing in the US myself?",
+          "faq.a4":
+            "In most cases, the employer or sponsor provides housing options. We check every offer to ensure living conditions are safe and comfortable.",
+          "faq.q5": "What should I do if an emergency arises in the US?",
+          "faq.a5":
+            "You will have access to a 24/7 support line. We stay in touch until your return to Astana and help resolve any issues with the sponsor or employer.",
+          "faq.q6": "Will I get a refund if my visa is denied?",
+          "faq.a6":
+            "Yes, in case of a visa denial, a partial refund is provided minus non-refundable registration fees. Detailed terms are fixed in the official contract.",
+          "faq.q7": "How much money should I bring for the first few weeks?",
+          "faq.a7":
+            "We recommend bringing $800 to $1000. You will need this for the housing deposit, food, and transport until your first paycheck, usually after 2 weeks.",
+
+          "footer.slogan": "Your trusted guide to the USA",
+          "footer.contactTitle": "CONTACT US",
+          "footer.phone": "Phone:",
+          "footer.whatsAppHint": "Message us on WhatsApp",
+          "footer.location": "Astana, Kazakhstan",
+          "footer.address": "Business Center, Syganak St., 54a, 14th floor, Yesil district, 010017.",
+          "footer.copyright": "© 2026 TurFam. Все права защищены."
+        }
+      };
+
+      const storedLang = localStorage.getItem("user-lang");
+      const browserLang =
+        (Array.isArray(navigator.languages) && navigator.languages[0]) || navigator.language || "";
+      let currentLang = (storedLang || (String(browserLang).toLowerCase().startsWith("en") ? "EN" : "RU")).toUpperCase();
+      if (!translations[currentLang]) currentLang = "RU";
+
+      function setLangVisual(active) {
+        const isRU = active === "RU";
+
+        const activeCls = "font-extrabold text-rose-400";
+        const inactiveCls = "font-normal text-white/80 hover:text-white";
+
+        if (langRU && langEN) {
+          langRU.className = `lang-btn ${isRU ? activeCls : inactiveCls}`;
+          langEN.className = `lang-btn ${!isRU ? activeCls : inactiveCls}`;
+          langRU.setAttribute("aria-pressed", String(isRU));
+          langEN.setAttribute("aria-pressed", String(!isRU));
+        }
+
+        if (langRU_M && langEN_M) {
+          const activeMobile =
+            "inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-white/10 px-4 text-base font-semibold text-white";
+          const inactiveMobile =
+            "inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl px-4 text-base text-white/80 hover:bg-white/10 hover:text-white transition-colors";
+          langRU_M.className = isRU ? activeMobile : inactiveMobile;
+          langEN_M.className = !isRU ? activeMobile : inactiveMobile;
+          langRU_M.setAttribute("aria-pressed", String(isRU));
+          langEN_M.setAttribute("aria-pressed", String(!isRU));
+        }
+      }
+
+      // Read-more (Testimonials) helpers — language aware
+      function setReadMoreButtonLabel(btn) {
+        const expanded = btn?.dataset?.expanded === "true";
+        const dict = translations[currentLang] || translations.RU;
+        const key = expanded ? "test.showLess" : "test.readMore";
+        btn.textContent = dict[key] || (expanded ? "Скрыть" : "Читать полностью");
+      }
+
+      function syncReadMoreButtons() {
+        document.querySelectorAll(".readmore-btn").forEach((btn) => setReadMoreButtonLabel(btn));
+      }
+
+      function applyLanguage(lang, persist = true) {
+        currentLang = (lang || "RU").toUpperCase();
+        if (!translations[currentLang]) currentLang = "RU";
+        if (persist) localStorage.setItem("user-lang", currentLang);
+
+        const dict = translations[currentLang];
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (!key || !dict[key]) return;
+          el.textContent = dict[key];
+        });
+
+        // Update html lang attribute
+        document.documentElement.lang = currentLang === "EN" ? "en" : "ru";
+
+        setLangVisual(currentLang);
+
+        // Sync read-more button labels with the currently active language
+        syncReadMoreButtons();
+
+        // If an FAQ panel is open, its height needs to be recalculated after text changes.
+        if (typeof refreshFaqHeights === "function") {
+          // allow DOM to paint
+          requestAnimationFrame(() => refreshFaqHeights());
+        }
+      }
+
+      langRU?.addEventListener("click", () => applyLanguage("RU", true));
+      langEN?.addEventListener("click", () => applyLanguage("EN", true));
+      langRU_M?.addEventListener("click", () => applyLanguage("RU", true));
+      langEN_M?.addEventListener("click", () => applyLanguage("EN", true));
+      applyLanguage(currentLang, Boolean(storedLang));
+
+      // -----------------------
+      // Testimonials: Read More toggle
+      // -----------------------
+      document.querySelectorAll(".readmore-btn").forEach((btn) => {
+        if (!btn.dataset.expanded) btn.dataset.expanded = "false";
+        setReadMoreButtonLabel(btn);
+
+        btn.addEventListener("click", () => {
+          const card = btn.closest("article");
+          const text = card?.querySelector(".review-text");
+          if (!text) return;
+
+          const expanded = btn.dataset.expanded === "true";
+          const next = !expanded;
+          btn.dataset.expanded = String(next);
+
+          if (next) {
+            text.classList.remove("line-clamp-4");
+            text.classList.add("line-clamp-none");
+          } else {
+            text.classList.remove("line-clamp-none");
+            text.classList.add("line-clamp-4");
+          }
+
+          setReadMoreButtonLabel(btn);
+        });
+      });
+
+      // -----------------------
+      // FAQ accordion (one open at a time)
+      // -----------------------
+      const faqAccordion = document.getElementById("faqAccordion");
+      const faqButtons = Array.from(document.querySelectorAll(".faq-btn"));
+
+      function closeFaq(idx) {
+        const panel = document.querySelector(`[data-faq-panel="${idx}"]`);
+        const btn = document.querySelector(`.faq-btn[data-faq="${idx}"]`);
+        const icon = btn?.querySelector(".faq-icon");
+        if (!panel || !btn) return;
+        btn.setAttribute("aria-expanded", "false");
+        panel.style.maxHeight = "0px";
+        if (icon) icon.style.transform = "rotate(0deg)";
+      }
+
+      function openFaq(idx) {
+        const panel = document.querySelector(`[data-faq-panel="${idx}"]`);
+        const btn = document.querySelector(`.faq-btn[data-faq="${idx}"]`);
+        const icon = btn?.querySelector(".faq-icon");
+        if (!panel || !btn) return;
+        btn.setAttribute("aria-expanded", "true");
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        if (icon) icon.style.transform = "rotate(180deg)";
+      }
+
+      function getOpenFaqIndex() {
+        const openBtn = faqButtons.find((b) => b.getAttribute("aria-expanded") === "true");
+        return openBtn ? Number(openBtn.getAttribute("data-faq")) : null;
+      }
+
+      function refreshFaqHeights() {
+        const openIdx = getOpenFaqIndex();
+        if (openIdx === null || Number.isNaN(openIdx)) return;
+        const panel = document.querySelector(`[data-faq-panel="${openIdx}"]`);
+        if (panel) panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+
+      faqButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const idx = Number(btn.getAttribute("data-faq"));
+          const openIdx = getOpenFaqIndex();
+
+          // Close all first (single-open behavior)
+          faqButtons.forEach((b) => closeFaq(Number(b.getAttribute("data-faq"))));
+          if (openIdx !== idx) openFaq(idx);
+        });
+      });
+
+      window.addEventListener("resize", () => refreshFaqHeights(), { passive: true });
+
+      // Testimonials scroller buttons
+      const tScroller = document.getElementById("tScroller");
+      const tPrev = document.getElementById("tPrev");
+      const tNext = document.getElementById("tNext");
+
+      function scrollByCard(dir) {
+        if (!tScroller) return;
+        const firstCard = tScroller.querySelector("article");
+        const cardW = firstCard ? firstCard.getBoundingClientRect().width : 420;
+        tScroller.scrollBy({ left: dir * (cardW + 24), behavior: "smooth" });
+      }
+
+      tPrev?.addEventListener("click", () => scrollByCard(-1));
+      tNext?.addEventListener("click", () => scrollByCard(1));
+
+      const mapFacade = document.getElementById("mapFacade");
+      const mapIframeWrapper = document.getElementById("mapIframeWrapper");
+      let mapLoaded = false;
+      let mapHoverTimer;
+
+      function loadMap() {
+        if (mapLoaded || !mapIframeWrapper) return;
+        mapLoaded = true;
+        mapFacade?.classList.add("hidden");
+        mapIframeWrapper.classList.remove("hidden");
+
+        const iframe = document.createElement("iframe");
+        iframe.title = "TurFam Visa — Карта";
+        iframe.className = "h-full w-full";
+        iframe.loading = "lazy";
+        iframe.referrerPolicy = "no-referrer-when-downgrade";
+        iframe.src = "https://www.google.com/maps?q=%D1%83%D0%BB.%20%D0%A1%D1%8B%D0%B3%D0%B0%D0%BD%D0%B0%D0%BA%2054%D0%B0%2C%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0&output=embed";
+        mapIframeWrapper.appendChild(iframe);
+      }
+
+      mapFacade?.addEventListener("click", loadMap);
+      mapFacade?.addEventListener("pointerenter", () => {
+        if (mapLoaded) return;
+        mapHoverTimer = window.setTimeout(loadMap, 450);
+      });
+      mapFacade?.addEventListener("pointerleave", () => {
+        if (mapHoverTimer) window.clearTimeout(mapHoverTimer);
+      });
+    </script>
+  </body>
+</html>
